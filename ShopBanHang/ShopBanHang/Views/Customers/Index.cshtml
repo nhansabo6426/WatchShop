@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ShopBanHang.Models.Customer>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div style="float:right;">
+        <span>
+            <i class="glyphicon glyphicon-plus-sign"></i>
+        </span>
+        <a type="button" href="@Url.Action("Create")">
+            Thêm mới
+        </a>
+    </div>
+<table class="table table-hover" style="overflow-x:auto;">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Họ tên
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Tên người dùng
+        </th>
+        <th>
+            Mật khẩu
+        </th>
+        <th>
+            HashPassword
+        </th>
+        <th>
+            Quyền truy cập
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumbers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usernames)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HashPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccessManagement)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CustomerID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID })*@
+
+                <a type="button" href="@Url.Action("Edit",new { id = item.CustomerID})" class="fa fa-edit">
+                </a>
+                <a type="button" href="@Url.Action("Delete",new { id = item.CustomerID})" class="btn btn-link btn-xs">
+                    <span class="glyphicon glyphicon-trash"> </span>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

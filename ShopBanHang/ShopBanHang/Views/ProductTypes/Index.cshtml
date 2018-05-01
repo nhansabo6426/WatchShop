@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ShopBanHang.Models.ProductType>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div style="float:right;">
+        <span>
+            <i class="glyphicon glyphicon-plus-sign"></i>
+        </span>
+        <a type="button" href="@Url.Action("Create")">
+            Thêm mới
+        </a>
+    </div>
+<table class="table table-hover" style="overflow-x:auto;">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Loại sản phẩm
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.ProductTypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.ProductTypeID }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.ProductTypeID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.ProductTypeID })*@
+
+                <a type="button" href="@Url.Action("Edit",new { id = item.ProductTypeID})" class="fa fa-edit">
+                </a>
+                <a type="button" href="@Url.Action("Delete",new { id = item.ProductTypeID})" class="btn btn-link btn-xs">
+                    <span class="glyphicon glyphicon-trash"> </span>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
+

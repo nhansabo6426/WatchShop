@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ShopBanHang.Models.Cart>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="float:right;">
+    <span>
+        <i class="glyphicon glyphicon-plus-sign"></i>
+    </span>
+    <a type="button" href="@Url.Action("Create")">
+        Thêm mới
+    </a>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            Ngày tạo
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Thanh toán
+        </th>
+        <th>
+            Tổng tiền
+        </th>
+        <th>
+            Tên khách hàng
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalMoney)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+
+                <a type="button" href="@Url.Action("Edit",new { id = item.CartID})" class="fa fa-edit">
+                </a>
+
+                <a type="button" href="@Url.Action("Delete",new { id = item.CartID})" class="btn btn-link btn-xs">
+                    <span class="glyphicon glyphicon-trash"> </span>
+                </a>
+
+                <a type="button" href="@Url.Action("Detail", "Detail",new { id = item.CartID})" class="fa fa-edit">
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

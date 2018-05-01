@@ -1,0 +1,71 @@
+﻿@model ShopBanHang.Models.Cart
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+    <div>
+        <h4>Xóa đơn đặt hàng</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Ngày tạo
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DateCreate)
+            </dd>
+    
+            <dt>
+                Số lượng
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+    
+            <dt>
+                Trạng thái
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+    
+            <dt>
+                Thành tiền
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TotalMoney)
+            </dd>
+    
+            <dt>
+                Tên khách hàng
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Customer.Name)
+            </dd>
+    
+            <dt>
+                Tên sản phẩm
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Product.Name)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-warning" 
+                       onClick="return confirm('Bạn có chắc chắn muốn xóa?')" style="float:right"/> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+

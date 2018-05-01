@@ -1,0 +1,32 @@
+﻿@model ShopBanHang.Models.Trade
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div>
+        <h4>Xóa thương hiệu</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-warning" 
+                       onClick="return confirm('Bạn có chắc chắn muốn xóa?')" style="float:right"/> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+

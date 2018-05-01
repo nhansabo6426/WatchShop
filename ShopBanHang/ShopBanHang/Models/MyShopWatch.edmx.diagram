@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e45c7f26056e4a87980f4abd2d40b9bc" Name="Diagram1">
+        <EntityTypeShape EntityType="WatchShopModel.Cart" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WatchShopModel.Customer" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WatchShopModel.Photo" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WatchShopModel.Product" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WatchShopModel.ProductType" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WatchShopModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WatchShopModel.Trade" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="WatchShopModel.FK_Carts_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="WatchShopModel.FK_Carts_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="WatchShopModel.FK_Photos_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="WatchShopModel.FK_Products_ProductTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="WatchShopModel.FK_Products_Trades" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

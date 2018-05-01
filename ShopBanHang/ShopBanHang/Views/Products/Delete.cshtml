@@ -1,0 +1,108 @@
+﻿@model ShopBanHang.Models.Product
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div>
+        <h4>Xóa sản phẩm</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+               Tên sản phẩm
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+            <dt>
+                Xuất xứ
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Origin)
+            </dd>
+    
+            <dt>
+                Giá
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+    
+            <dt>
+                Mô tả
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+    
+            <dt>
+                Số lượng
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Images1)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Images1)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Images2)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Images2)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Images3)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Images3)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Images4)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Images4)
+            </dd>
+    
+            <dt>
+                Loại sản phẩm
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProductType.Name)
+            </dd>
+    
+            <dt>
+                Thương hiệu
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Trade.Name)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-warning" 
+                onClick="return confirm('Bạn có chắc chắn muốn xóa?')" style="float:right"/> 
+            </div>
+        }
+    </div>

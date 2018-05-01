@@ -1,0 +1,103 @@
+﻿@model IEnumerable<ShopBanHang.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div style="float:right;">
+        <span>
+            <i class="glyphicon glyphicon-plus-sign"></i>
+        </span>
+        <a type="button" href="@Url.Action("Create")" >
+            Thêm mới
+        </a>
+    </div>
+<table class="table table-hover" style="overflow-x:auto;">
+    <tr>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Nguồn gốc
+        </th>
+        <th>
+            Giá
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Hình 1
+        </th>
+        <th>
+            Hình 2
+        </th>
+        <th>
+            Hình 3
+        </th>
+        <th>
+            Hình 4
+        </th>
+        <th>
+            Loại sản phẩm
+        </th>
+        <th>
+            Thương hiệu
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Origin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                <img src="@item.Images1" class="imgPro" />
+            </td>
+            <td>
+                <img src="@item.Images2" class="imgPro" />
+            </td>
+            <td>
+                <img src="@item.Images3" class="imgPro" />
+            </td>
+            <td>
+                <img src="@item.Images4" class="imgPro" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductType.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trade.Name)
+            </td>
+            <td>
+                @*@Html.ActionLink("Sửa", "Edit", new { id=item.ProductID }, new { @class = "btn btn-success " }) |*@
+                @*@Html.ActionLink("Details", "Details", new { id=item.ProductID }) |*@
+                @*@Html.ActionLink("Delete", "Delete", new { id=item.ProductID }, new { @class = "btn btn-danger" })*@
+                <a type="button" href="@Url.Action("Edit",new { id = item.ProductID})" class="fa fa-edit">
+                </a>
+                <a type="button" href="@Url.Action("Delete",new { id = item.ProductID})" class="btn btn-link btn-xs">
+                    <span class="glyphicon glyphicon-trash"> </span>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
+

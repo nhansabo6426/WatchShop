@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ShopBanHang.Models.Product>
+@{
+    ViewBag.Title = "ListProduct";
+    Layout = "~/Views/Shared/_Layout_Nguoidung.cshtml";
+}
+
+<div class="container">
+    <div class="tab-content">
+        <div class="row trending-item">
+        </div>
+        <div class="tab-pane active" id="trending">
+            
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 col-sm-4">
+
+                <div class="single-product">
+
+                    <div class="product-block">
+                       
+                        <img src="@item.Images1" alt="" class="thumbnail">
+                        <div class="product-description text-center">
+
+                            <p class="title">@item.Name</p>
+
+                            <p class="price">@item.Price</p>
+
+                        </div>
+
+                        <div class="product-hover">
+
+                            <ul>
+
+                                <li>
+                                    <a href="@Url.Action("ThemVaoGio", "Home", new { sanPhamID = item.ProductID})">
+                                        <i class="fa fa-cart-arrow-down"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("DetailProduct", new { id = item.ProductID })">
+                                        <i class="fa fa-arrows-h"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="">
+                                        <i class="fa fa-heart-o"></i>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+        </div>
+    </div>
+</div>
+

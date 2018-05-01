@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Signup";
+    Layout = "~/Views/Shared/_Layout_Nguoidung.cshtml";
+}
+<div class="full" style="background:#4FC3B5">
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="fullscreenbg">
+                    <img src="~/Contents/Images/login.png" alt="">
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form accept-charset="UTF-8" role="form" method="post">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Họ tên" name="name" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Địa chỉ" name="address" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Số điện thoại" name="phone" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Tài khoản" name="email" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Mật khẩu" name="password" type="password" value="">
+                                </div>
+                                <input class="btn btn-lg btn-warning btn-block" type="submit" value="Đăng ký">
+                                <br>
+                                <a href="@Url.Action("Login","Account")" id="textSignup" style="text-align: center; text-decoration: none;color: black;">
+                                    Đã có tài khoản? Đăng nhập
+                                </a>
+                                <p style="color:red">
+                                    @ViewBag.message
+                                </p>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

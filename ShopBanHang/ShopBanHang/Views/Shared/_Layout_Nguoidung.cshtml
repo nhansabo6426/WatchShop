@@ -1,0 +1,191 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>APP | STORE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Contents/Css/style.css">
+    <link href="~/Contents/Css/style1.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    @*<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">*@
+</head>
+<body>
+    <!-- Head -->
+    <!-- Menu-Top -->
+    <div class="header-info">
+        <div class="container">
+            <div class="header-top-in">
+                <ul class="support">
+                    <li>
+                        <a href="mailto:info@example.com">
+                            <i class="glyphicon glyphicon-envelope"></i>lntnShop@ptit.com
+                        </a>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="glyphicon glyphicon-earphone" class="tele-in"> </i>0 462 261 61 61
+                        </span>
+                    </li>
+                </ul>
+                <ul class=" support-right">
+                    <li>
+                        <a href="@Url.Action("Login","Account")">
+                            <i class="glyphicon glyphicon-user" class="men"> </i>Đăng Nhập
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Signup","Account")">
+                            <i class="glyphicon glyphicon-lock" class="tele"> </i>Đăng Kí
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- // Menu-Top -->
+    <!-- Menu-Bot -->
+    <div class="menu-bot">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2" style="padding-top: 8px;">
+                    <a href="@Url.Action("Index","Home")" class="textmenubot" id="shopname"><span>lntn shop</span></a>
+                </div>
+                <div class="col-md-2" style="padding-top: 12px;">
+                    <a href="@Url.Action("Index","Home")" id="textmenubot"> TRANG CHỦ</a>
+                </div>
+                <div class="col-md-2" style="padding-top: 4px;">
+                    <div class="btn-group">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="textmenubot" style="font-size: 17px;">
+                            SẢN PHẨM
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("LoaiSanPham","Home", new {@producttype = 4 })">Dây dù</a></li>
+                            <li><a href="@Url.Action("LoaiSanPham","Home", new {@producttype = 2 })">Dây da</a></li>
+                            <li>
+                                <a href="@Url.Action("ListProduct","Home")">
+                                    Tất cả sản phẩm
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-2" style="padding-top: 12px;">
+                    <a href="@Url.Action("Contact","Home")" id="textmenubot"> LIÊN HỆ</a>
+                </div>
+
+                <div class="col-md-2" style="padding-top: 5px;">
+
+                    <a href="@Url.Action("GioHangIndex","Home")" class="cart">
+                        <i class="fa fa-cart-arrow-down"></i>
+                    </a>
+                    <span>Shopping Cart</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- // Menu-Bot -->
+    <!-- //Head -->
+    <!-- page wraper -->
+    @RenderBody()
+    <!-- //page wrapper -->
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer1">
+            <div class="container-fluid">
+
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h2>Giới thiệu</h2>
+                            <p>
+                                <div class="myframegmap">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448183.73912804417!2d76.81306640115254!3d28.646677246352574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1513154329228"
+                                            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </p>
+                            <br>
+                        </div>
+                        <div class="col-sm-4">
+                            <h2>Trang Chủ</h2>
+                            <p>
+                                <i class="fa fa-home"></i>
+                                <a href="#"> Trang chủ</a>
+                                <br>
+                                <i class="fa fa-map-marker"></i>
+                                <a href="#"> Liên hệ</a>
+                                <br>
+                                <i class="fa fa-briefcase"></i>
+                                <a href="#"> Dịch vụ</a>
+                                <br>
+                                <i class="fa fa-question-circle"></i>
+                                <a href="#"> Điều khoản & Điều kiện</a>
+                                <br>
+                                <br>
+
+
+                            </p>
+
+
+                        </div>
+                        <div class="col-sm-4 ">
+                            <h2>Liên Hệ</h2>
+                            <p>
+
+                                <i class="fa fa-phone"></i>
+                                <a href="tel:0123456789"> 0 462 261 61 61</a>
+                                <br>
+                                <i class="fa fa-envelope"></i>
+                                <a href="mailto:abc@abc.com"> lntnShop@ptit.com</a>
+                                <br>
+                                <i class="fa fa-map-marker"></i>     Quận 9 , TP Hồ Chí Minh
+                            </p>
+
+                            <br>
+                        </div>
+                    </div>
+                    <div class="clear30"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer2">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="clear30"></div>
+                        <div class="col-sm-12 text-center">
+                            <p>
+                                <strong>Copyright © 2018 All right reserved.</strong>
+                            </p>
+                        </div>
+                        <div class="clear30"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //Footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    @*<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>*@
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    @*<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>*@
+</body>
+</html>
